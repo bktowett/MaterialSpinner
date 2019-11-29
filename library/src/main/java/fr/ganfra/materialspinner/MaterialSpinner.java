@@ -234,13 +234,14 @@ public class MaterialSpinner extends AppCompatSpinner implements ValueAnimator.A
         }
     }
 
-    @Override
+     @Override
     public int getSelectedItemPosition() {
-        return super.getSelectedItemPosition();
+        //return super.getSelectedItemPosition();
+        return (hint != null ? super.getSelectedItemPosition() - 1 : super.getSelectedItemPosition());
     }
 
     public Object getSelectedItem() {
-        return super.getItemAtPosition(getSelectedItemPosition()-1);
+        return super.getItemAtPosition(getSelectedItemPosition());
     }
 
     private void initPadding() {
